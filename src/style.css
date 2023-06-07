@@ -1,0 +1,254 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+#content {
+    min-height: 100vh;
+    width: 100%;
+    background: url('../src/background_burgers.jpg') no-repeat center center / cover;
+    font-family: 'Khand', sans-serif;
+    font-weight: 400;
+    color: #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Header */
+.header {
+    width: 100%;
+    height: 5rem;
+    background: #181818ab;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: auto;
+    -webkit-box-shadow: 0px 13px 61px -13px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 0px 13px 61px -13px rgba(66, 68, 90, 1);
+    box-shadow: 0px 13px 61px -13px rgba(66, 68, 90, 1);
+}
+
+.head {
+    width: 1440px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.logo {
+    font-family: 'Rubik Mono One', sans-serif;
+    font-size: 36px;
+}
+
+.red_logo {
+    color: #ff0000;
+}
+
+.nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.btn {
+    cursor: pointer;
+    font-size: 24px;
+    color: #eee;
+    background: transparent;
+    border: none;
+    outline: none;
+    text-align: center;
+    padding: 5px;
+}
+
+.btn.active {
+    color: #ff0000;
+    border-bottom: 2px solid #ff0000;
+}
+
+.btn:hover {
+    text-shadow: 0px 0px 12px #eee;
+    transition: all .5s;
+}
+
+/* Home Box */
+.main {
+    width: min(600px, 90%);
+    -webkit-box-shadow: 0px 0px 13px 1px #131212cf;
+    -moz-box-shadow: 0px 0px 13px 1px #131212cf;
+    box-shadow: 0px 0px 13px 1px #131212cf;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background: #181818ab;
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+}
+
+.circle_img {
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.description,
+.cta {
+    font-size: 20px;
+}
+
+/* Menu Container */
+.menu_module {
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    padding: 50px;
+    background: #181818ab;
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background: #131212cf;
+    animation: showBurger .5s ease-out;
+}
+
+.card:hover {
+    background: #303030cf;
+    transition: background .3s ease-out;
+}
+
+.card:hover .burger_name {
+    color: #ff0000;
+    transition: color .5s;
+}
+
+.burger_img {
+    width: 125px;
+    height: auto;
+    
+}
+
+@keyframes showBurger {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Contact Container */
+.contact_module {
+    width: clamp(300px, 900px, 90%);
+    background: #181818ab;
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.contact_module > h2 {
+    font-size: 32px;
+}
+
+/* Gmail iframe styles */
+.mapouter {
+    position:relative;
+    text-align:right;
+    width:100%;
+    height:500px;
+} 
+.gmap_canvas {
+    overflow:hidden;
+    background:none!important;
+    width:100%;
+    height:500px;
+    border-radius: 20px;
+}
+.gmap_iframe {
+    height:500px!important;
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    height: 5vh;
+    background: #181818ab;
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-shadow: 0px -4px 61px -13px rgb(51, 52, 62);
+    -moz-box-shadow: 0px -4px 61px -13px rgb(51, 52, 62);
+    box-shadow: 0px -4px 61px -13px rgb(51, 52, 62);
+}
+
+.foot {
+    max-width: 1440px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.gh_icon:hover {
+    animation: rotate .7s ease-in-out;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotateZ(0);
+    }
+
+    100% {
+        transform: rotateZ(1080deg);
+    }
+}
+
+.icon {
+    aspect-ratio: 1 / 1;
+    width: 30px;
+    vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+    .header {
+        height: 7rem;
+    }
+
+    .head {
+        gap: 20px;
+        flex-direction: column;
+    }
+}
