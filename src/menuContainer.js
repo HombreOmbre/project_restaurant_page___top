@@ -1,6 +1,4 @@
-const mealFactory = (mealImg, mealName, mealIngredients) => {
-    return {mealImg, mealName, mealIngredients};
-};
+import mealFactory from "./mealFactory";
 
 export default function createMenuContainer() {
 
